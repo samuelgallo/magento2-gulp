@@ -1,0 +1,91 @@
+@mixin placeholder($color) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder {
+        color: $color;
+    }
+    /* Firefox 18- */
+    &::-moz-placeholder {
+        color: $color;
+    }
+    /* Firefox 19+ */
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+    &::placeholder {
+        color: $color;
+    }
+}
+
+@mixin transform($transform){
+  -moz-transform:$transform;
+  -webkit-transform:$transform;
+  -o-transform:$transform;
+  -ms-transform:$transform;
+  transform:$transform;
+}
+
+@mixin font-size($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
+
+@mixin font-mix($size: 14px, $family: false, $weight: false, $color: false) {
+    font-size: $size; //Fallback in px
+    font-size: calculateRem($size);
+    @if $family { font-family: $family; }
+    @if $color { color: $color; }
+    @if $weight { font-weight: $weight; }
+}
+
+@mixin cleafix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+// Define vertical, horizontal, or both position
+@mixin center($position) {
+  position: absolute;
+
+  @if $position == 'vertical' {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @else if $position == 'horizontal' {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  }
+  @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+// @include center(both);
+
+@mixin tracking($ps-tracking){
+    letter-spacing: #{$ps-tracking/1000}em;
+}
+
+@mixin radius($arc) {
+    -moz-border-radius: $arc;
+    -webkit-border-radius: $arc;
+    border-radius: $arc;
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+//@include pseudo;

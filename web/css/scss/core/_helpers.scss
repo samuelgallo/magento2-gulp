@@ -1,0 +1,58 @@
+/* ===========================
+   Tools/Helpers
+   =========================== */
+.hidden, .hide {
+    display: none !important;
+    visibility: hidden;
+}
+
+.desktop-only{
+  @include media-breakpoint-down(md) {
+    display: none!important;
+  }
+}
+.mobile-only{
+  display: none!important;
+  @include media-breakpoint-down(md) {
+    display: block!important;
+  }
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.hover-shadow{
+	padding: 0.625rem;
+	transition: all ease-in-out .3s;
+		&:hover{
+			box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+		}
+}
+
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline-item {
+  display: inline-block;
+}
+
+.list-inline-item:not(:last-child) {
+  margin-right: 0.5rem;
+}

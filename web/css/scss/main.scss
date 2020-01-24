@@ -1,0 +1,34 @@
+//
+//  Core
+//  ---------------------------------------------
+@import 'scss/core/_variables';
+@import 'scss/core/_functions';
+@import 'scss/core/_mixins';
+@import 'scss/core/_helpers';
+
+//
+//  Base
+//  ---------------------------------------------
+@import 'scss/base/_reset';
+@import 'scss/base/_animations';
+@import 'scss/base/_icons';
+@import 'scss/base/_font';
+
+//
+//  Partials
+//  ---------------------------------------------
+@import 'scss/partials/_header';
+@import 'scss/partials/_navigation';
+@import 'scss/partials/_footer';
+
+//
+//  Pages
+//  ---------------------------------------------
+@import 'scss/pages/_home';
+@import 'scss/pages/_catalog';
+@import 'scss/pages/_search';
+@import 'scss/pages/_product';
+@import 'scss/pages/_cms';
+@import 'scss/pages/_account';
+@import 'scss/pages/_cart';
+@import 'scss/pages/_checkout';
